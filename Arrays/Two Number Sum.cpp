@@ -1,6 +1,8 @@
 #include <vector>
 using namespace std;
 
+// Question: given unique elements, find all pairs with given target sum
+
 vector<int> twoNumberSum(vector<int> a, int target) {
   	vector<int> v;
 	sort(a.begin(),a.end());
@@ -20,4 +22,3 @@ vector<int> twoNumberSum(vector<int> a, int target) {
 	}
   return v;
 }
-
