@@ -1,6 +1,5 @@
 // Question: given unique elements, find all pairs with given target sum
 
-
   "array": [3, 5, -4, 8, 11, 1, -1, 6],
   "targetSum": 10
   o/p: [-1,11]	  
