@@ -1,3 +1,9 @@
+// Question: valiate if 2nd array is subsequence of 1st array
+
+"array": [5, 1, 22, 25, 6, -1, 8, 10],
+"sequence": [1, 6, -1, 10]
+o/p: true
+
 #include <vector>
 using namespace std;
 
