@@ -53,7 +53,7 @@ vector<int> sortedSquaredArray(vector<int> a) {
   return v;
 }
 
-
+// Approach 2: 2-pointer to keep track of values
 
 #include <bits/stdc++.h>
 using namespace std;
