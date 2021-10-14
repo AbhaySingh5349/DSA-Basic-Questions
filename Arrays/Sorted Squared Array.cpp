@@ -52,3 +52,37 @@ vector<int> sortedSquaredArray(vector<int> a) {
 	mergesort(v,0,n-1);
   return v;
 }
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> sortedSquaredArray(vector<int> a) {
+  int n=a.size();
+	int i=0, j=n-1;
+	int idx=n-1;
+	vector<int> v(n,0);
+	while(i<j){
+		if(abs(a[j])>abs(a[i])){
+			int x=a[j]*a[j];
+			v[idx]=x;
+			idx--;
+			j--;
+		}else if(abs(a[j])<abs(a[i])){
+			int x=a[i]*a[i];
+			v[idx]=x;
+			idx--;
+			i++;
+		}else{
+			int x=a[i]*a[i];
+			int y=a[j]*a[j];
+			v[idx]=x;
+			v[idx-1]=y;
+			idx-=2;
+			i++, j--;
+		}
+	}
+	if(i==j) v[idx]=a[i]*a[i];
+  return v;
+}
