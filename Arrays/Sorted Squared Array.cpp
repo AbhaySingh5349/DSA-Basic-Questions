@@ -1,3 +1,10 @@
+// Question: given a sorted array, return new array with squares of original integers arranged in ascending order
+
+"array": [-7, -3, 1, 9, 22, 30]
+op: [1,9,21,81,484,900]
+
+// Approach 1: using merge sort after squaring element: O(nlogn)
+
 #include <vector>
 using namespace std;
 
@@ -36,7 +43,7 @@ void mergesort(vector<int> &v, int s, int e){
 }
 
 vector<int> sortedSquaredArray(vector<int> a) {
-  int n=a.size();
+  	int n=a.size();
 	vector<int> v;
 	for(int i=0;i<n;i++){
 		int x=a[i]*a[i];
