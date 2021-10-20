@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// For any subtree to be BST, current node should follow BST condition and left and right child should als0 follow BST condition
+
 // root > all left childrens, root <= all right children
 
 class BST {
