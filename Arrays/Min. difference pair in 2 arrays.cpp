@@ -34,10 +34,10 @@ vector<int> smallestDifference(vector<int> a, vector<int> b) {
 	while(i<n && j<m){
 		int d=abs(a[i]-b[j]);
 		if(d<mind){
-				mind=d;
-				f=a[i];
-				s=b[j];
-			}
+			mind=d;
+			f=a[i];
+			s=b[j];
+		}
 		if(a[i]<b[j]){
 			i++;
 		}else if(a[i]>b[j]){
