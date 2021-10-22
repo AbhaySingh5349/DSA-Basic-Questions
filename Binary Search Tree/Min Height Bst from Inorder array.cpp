@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 BST *create(vector<int> &a, int s, int e){
 	if(s>e) return NULL;
 	int mid=(s+e)/2;
