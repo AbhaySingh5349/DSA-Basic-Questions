@@ -1,6 +1,8 @@
 #include <vector>
 using namespace std;
 
+// using Kahn's Algorithm (it gives Topo-sort), if valid Topo-sort doesn't exists, means graph has Cycle
+
 bool cycleInGraph(vector<vector<int>> edges) {
   int n=edges.size();
 	vector<int> graph[n];
