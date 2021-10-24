@@ -1,7 +1,7 @@
 #include <vector>
 using namespace std;
 
-// Using Kahn's Algorithm (it gives Topo-sort), if valid Topo-sort doesn't exists, means graph has Cycle
+// Using Kahn's Algorithm (it gives Topo-sort), if valid Topo-sort doesn't exists, means graph has a Cycle
 
 bool cycleInGraph(vector<vector<int>> edges) {
   int n=edges.size();
