@@ -1,3 +1,8 @@
+// Question: check if array is monotonic or not (non-increasing or non-decreasing)
+
+"array": [-1, -5, -10, -1100, -1100, -1101, -1102, -9001]
+op: true
+
 using namespace std;
 
 bool isMonotonic(vector<int> a) {
