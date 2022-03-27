@@ -3,7 +3,7 @@
 "coins": [5, 7, 1, 1, 2, 3, 22]
 op: 20
 	
-// Method 1:
+// Approach 1:
 
 #include <vector>
 using namespace std;
@@ -31,7 +31,7 @@ int nonConstructibleChange(vector<int> a) {
 	return sum+1;
 }
 
-// Method 2: if current value is > than 'running sum+1' therefor we cannot create that value
+// Approach 2: if current value is > than 'running sum+1' therefor we cannot create that value
 
 #include <vector>
 using namespace std;
