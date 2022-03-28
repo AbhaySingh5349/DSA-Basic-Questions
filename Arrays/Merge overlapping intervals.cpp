@@ -1,3 +1,6 @@
+"intervals": [[1, 2],[3, 5],[4, 7],[6, 8],[9, 10]]
+op: [[1,2],[3,8],[9,10]]
+
 #include <vector>
 using namespace std;
 
@@ -23,5 +26,6 @@ vector<vector<int>> mergeOverlappingIntervals(vector<vector<int>> intervals) {
 	v.push_back(s);
 	v.push_back(e);
 	ans.push_back(v);
+	
   return ans;
 }
