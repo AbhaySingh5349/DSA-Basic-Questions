@@ -1,5 +1,9 @@
 // Question: given array with Distinct elements, find all unique quadruplets 
 
+"array": [7, 6, 4, -1, 1, 2],
+"targetSum": 16
+op: [[7,6,4,-1],[7,6,1,2]]
+
 // Approach 1:
 
 #include <vector>
