@@ -1,3 +1,7 @@
+// Question: longest range of continuous elements present in random array
+"array": [1, 11, 3, 0, 15, 5, 2, 4, 10, 7, 12, 6]
+op: [0,7]
+
 #include <vector>
 using namespace std;
 
