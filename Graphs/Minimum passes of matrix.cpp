@@ -1,3 +1,5 @@
+// Question: minimum moves required to change all -ve to +ve such that in 1 move a +ve element can convert all adjecent -ve to +ve
+
 #include <vector>
 using namespace std;
 
