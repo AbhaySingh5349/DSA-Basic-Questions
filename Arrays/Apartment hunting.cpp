@@ -66,6 +66,10 @@ using namespace std;
 // take max for each idx we know how far we to go for each requirement
 // idx corresponding to min of these max is answer
 
+closest distance: Gym:   [1,0,0,1,2]
+		  School:[0,1,0,0,0]
+		  Store: [4,3,2,1,0]
+
 int apartmentHunting(vector<unordered_map<string, bool>> blocks,vector<string> reqs) {
   int n=blocks.size(), m=reqs.size();
 	map<string,vector<int>> closestDist;
