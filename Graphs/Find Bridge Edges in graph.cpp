@@ -1,7 +1,6 @@
 class Solution {
 public:
-    
-    
+     
 // if there exist a Bridge-edge, so graph is not 2-edge connected
 // Tree-edges(can be a Bridge-edge): connects new vertices in DFS
 // Back-edge: edge b/t current node<-->vertex which is our visited descendent with less arrival time (ancestor but not parent)
