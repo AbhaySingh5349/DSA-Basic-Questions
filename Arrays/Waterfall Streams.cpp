@@ -1,3 +1,17 @@
+// Question: given 2d array with 0=empty space (water can fall downwards) , 1=water split 50-50 to left and right. Find %water in last row for each column
+"array": [
+    [0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [1, 1, 1, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0, 0, 0]
+  ],
+  "source": 3
+}
+op: [0,0,0,25,25,0,0]
+
 #include <vector>
 using namespace std;
 
