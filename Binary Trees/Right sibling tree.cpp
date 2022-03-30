@@ -1,3 +1,5 @@
+// Question: connect nodes at same level
+
 #include <vector>
 using namespace std;
 
@@ -30,4 +32,3 @@ BinaryTree *rightSiblingTree(BinaryTree *root) {
 	}
   return root;
 }
-
