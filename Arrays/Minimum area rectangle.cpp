@@ -1,3 +1,18 @@
+// Question: min. area of rectangle with lines || to axes
+"points": [
+    [1, 5],
+    [5, 1],
+    [4, 2],
+    [2, 4],
+    [2, 2],
+    [1, 2],
+    [4, 5],
+    [2, 5],
+    [-1, -2]
+  ]
+}
+op: 3 // [1,5] [2,5] [1,2] [2,2]
+
 #include <bits/stdc++.h>
 using namespace std;
 
