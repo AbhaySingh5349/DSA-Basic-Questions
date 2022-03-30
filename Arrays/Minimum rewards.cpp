@@ -1,3 +1,7 @@
+// Question: Given scores of exam, rewards are given such that person with better score w.r.t adjecent person, should have more score, find min. rewards 
+"scores": [8, 4, 2, 1, 3, 6, 7, 9, 5]
+op: 25 // [4,3,2,1,2,3,4,5,1]
+
 #include <vector>
 using namespace std;
 
