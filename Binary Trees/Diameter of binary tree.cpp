@@ -1,3 +1,5 @@
+// Question: max. edges b/w any 2 nodes 
+
 using namespace std;
 
 // This is an input class. Do not edit.
@@ -36,4 +38,3 @@ int binaryTreeDiameter(BinaryTree *tree) {
   if(tree->left==NULL && tree->right==NULL) return 0;
   return solve(tree).LTL;
 }
-
