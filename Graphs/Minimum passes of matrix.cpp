@@ -1,5 +1,12 @@
 // Question: minimum moves required to change all -ve to +ve such that in 1 move a +ve element can convert all adjecent -ve to +ve
 
+"matrix": [
+    [0, -1, -3, 2, 0],
+    [1, -2, -5, -1, -3],
+    [3, 0, 0, -4, -1]
+  ]
+op: 3  
+
 #include <vector>
 using namespace std;
 
