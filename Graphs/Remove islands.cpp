@@ -1,3 +1,22 @@
+// Question: a valid island is group of horzontally and vertically connected 1s which are not part of border.
+
+"matrix": [
+    [1, 0, 0, 0, 0, 0],
+    [0, 1, 0, 1, 1, 1],
+    [0, 0, 1, 0, 1, 0],
+    [1, 1, 0, 0, 1, 0],
+    [1, 0, 1, 1, 0, 0],
+    [1, 0, 0, 0, 0, 1]
+  ]
+op: [
+    [1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 1, 1],
+    [0, 0, 0, 0, 1, 0],
+    [1, 1, 0, 0, 1, 0],
+    [1, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 1]
+  ]
+
 #include <vector>
 using namespace std;
 
