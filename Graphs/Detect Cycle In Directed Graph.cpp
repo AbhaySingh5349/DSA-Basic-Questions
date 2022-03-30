@@ -1,3 +1,13 @@
+"edges": [
+    [1, 3],
+    [2, 3, 4],
+    [0],
+    [],
+    [2, 5],
+    []
+  ]
+op: true // multiple cycles exist: 0 -> 1 -> 2 -> 0 , 0 -> 1 -> 4 -> 2 -> 0 , 1 -> 2 -> 0 -> 1
+
 // Approach 1: Using Kahn's Algorithm (it gives Topo-sort), if valid Topo-sort doesn't exists, means graph has a Cycle
 
 #include <vector>
