@@ -106,3 +106,73 @@ int apartmentHunting(vector<unordered_map<string, bool>> blocks,vector<string> r
 	}
   return idx;
 }
+
+
+// Approach 3:
+
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+int apartmentHunting(vector<unordered_map<string, bool>> blocks,
+                     vector<string> reqs) {
+
+  int n=blocks.size();
+  
+  vector<unordered_map<string, int>> left(n); // [idx,req] --> nearest left position
+  for(string s:reqs){
+    if(blocks[0][s]==true){
+      left[0][s]=0;
+    }else{
+      left[0][s]=-1;
+    }
+  }
+  
+  for(int i=1;i<n;i++){
+    for(string s:reqs){
+      if(blocks[i][s]==true){
+        left[i][s]=i;
+      }else{
+        left[i][s]=left[i-1][s];
+      }
+    }
+  }
+
+  vector<unordered_map<string, int>> right(n); // [idx,req] --> nearest right position
+  for(string s:reqs){
+    if(blocks[n-1][s]==true){
+      right[n-1][s]=n-1;
+    }else{
+      right[n-1][s]=n;
+    }
+  }
+
+  for(int i=n-2;i>=0;i--){
+    for(string s:reqs){
+      if(blocks[i][s]==true){
+        right[i][s]=i;
+      }else{
+        right[i][s]=right[i+1][s];
+      }
+    }
+  }
+
+  int maxd=n+1, idx=-1;
+  for(int i=0;i<n;i++){
+    int curd=-1;
+    for(string s:reqs){
+      
+      int d1 = (left[i][s]==-1 ? INT_MAX/2:abs(i-left[i][s]));
+      int d2 = (right[i][s]==n ? INT_MAX/2:abs(right[i][s]-i));
+
+      curd=max(curd,min(d1,d2));
+    }
+
+    if(curd<maxd){
+      idx=i;
+      maxd=curd;
+    }
+  }
+  return idx;
+}
