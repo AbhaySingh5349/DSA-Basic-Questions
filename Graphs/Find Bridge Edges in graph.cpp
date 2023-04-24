@@ -1,5 +1,3 @@
-class Solution {
-public:
      
 // if there exist a Bridge-edge, so graph is not 2-edge connected
 // Tree-edges(can be a Bridge-edge): connects new vertices in DFS
@@ -15,38 +13,42 @@ public:
 // we will return min arrival time from descendent
 // for any vertex, if min arrival time of child > arrival time of parent, so this vertex forms Bridge-edge with child
     
-    void dfs(vector<int> graph[],int src,int parent,int &time,vector<int> &arrivalTime,vector<int> &minArrivalTime,vector<vector<int>> &ans){
-        arrivalTime[src]=time;
-        minArrivalTime[src]=time;
-        time++;
-        for(int i=0;i<graph[src].size();i++){
-            int child=graph[src][i];
-            if(child==parent) continue;
+#include <vector>
+using namespace std;
 
-            if(arrivalTime[child]==-1){ // Tree-edge
-                dfs(graph,child,src,time,arrivalTime,minArrivalTime,ans);
-                
-                if(minArrivalTime[child]>arrivalTime[src]){ // Bridge-edge (src --- child)
-                    ans.push_back({src,child});
-                } 
-                minArrivalTime[src]=min(minArrivalTime[src],minArrivalTime[child]);
-            }else{ // Forward-edge or Back-edge
-                minArrivalTime[src]=min(minArrivalTime[src],minArrivalTime[child]);
-            }
-        }
-    }
+bool dfs(vector<vector<int>> &adj_list,int src,int parent,int &time,vector<int> &arrivalTime,vector<int> &minArrivalTime){
+  arrivalTime[src] = minArrivalTime[src] = time;
+  time++;
+  
+  for(int child : adj_list[src]){
+    if(child==parent) continue;
     
-    vector<vector<int>> criticalConnections(int n, vector<vector<int>>& edges) {
-        vector<int> graph[n];
-        for(int i=0;i<edges.size();i++){
-            int u=edges[i][0], v=edges[i][1];
-            graph[u].push_back(v);
-            graph[v].push_back(u);
-        }
-        vector<int> arrivalTime(n,-1), minArrivalTime(n,-1); // minimum arrival time of ancestor that child can access
-        int src=0, time=0;
-        vector<vector<int>> ans;
-        dfs(graph,src,-1,time,arrivalTime,minArrivalTime,ans);
-        return ans;
+    if(arrivalTime[child] == -1){ // Tree-edge (new edge in dfs traversal)
+      if(dfs(adj_list,child,src,time,arrivalTime,minArrivalTime) == false) return false;
+      
+      if(minArrivalTime[child] == arrivalTime[child]) return false;
     }
-};
+    minArrivalTime[src]=min(minArrivalTime[src],minArrivalTime[child]);
+  }
+
+  return true;
+} 
+
+bool twoEdgeConnectedGraph(vector<vector<int>> adj_list) {
+  int n=edges.size();
+
+  if(n==0) return true;
+  
+  vector<int> arrivalTime(n,-1), minArrivalTime(n,-1); // minimum arrival time of ancestor that child can access
+  int time=0;
+  
+  bool valid = dfs(adj_list,0,-1,time,arrivalTime,minArrivalTime);
+
+  if(valid){
+    for(int t : arrivalTime){
+      if(t == -1) return false;
+    }
+  }
+
+  return valid;
+}
