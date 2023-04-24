@@ -43,7 +43,7 @@ public:
             graph[u].push_back(v);
             graph[v].push_back(u);
         }
-        vector<int> arrivalTime(n,-1), minArrivalTime(n,-1);
+        vector<int> arrivalTime(n,-1), minArrivalTime(n,-1); // minimum arruval time of ancestor that child can access
         int src=0, time=0;
         vector<vector<int>> ans;
         dfs(graph,src,-1,time,arrivalTime,minArrivalTime,ans);
