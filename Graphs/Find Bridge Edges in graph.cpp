@@ -26,7 +26,7 @@ bool dfs(vector<vector<int>> &adj_list,int src,int parent,int &time,vector<int> 
     if(arrivalTime[child] == -1){ // Tree-edge (new edge in dfs traversal)
       if(dfs(adj_list,child,src,time,arrivalTime,minArrivalTime) == false) return false;
       
-      if(minArrivalTime[child] == arrivalTime[child]) return false;
+      if(minArrivalTime[child] > arrivalTime[src]) return false;
     }
     minArrivalTime[src]=min(minArrivalTime[src],minArrivalTime[child]);
   }
