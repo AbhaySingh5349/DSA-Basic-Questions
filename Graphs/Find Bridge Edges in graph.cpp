@@ -3,7 +3,7 @@ public:
      
 // if there exist a Bridge-edge, so graph is not 2-edge connected
 // Tree-edges(can be a Bridge-edge): connects new vertices in DFS
-// Back-edge: edge b/t current node<-->vertex which is our visited descendent with less arrival time (ancestor but not parent)
+// Back-edge: edge b/t current child <--> ancestor with less arrival time than parent
 // Back-edge tell us there is another way to reach current vertex from ancestral vertex
 // for each existing Tree-edge pair in DFS, we need to check:
 // --> if we can reach from parent to child taking some other path than current direct edge
